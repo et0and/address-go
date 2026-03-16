@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/address-go/internal/apijson"
-	rj "github.com/stainless-sdks/address-go/packages/respjson"
+	"github.com/et0and/address-go/internal/apijson"
+	rj "github.com/et0and/address-go/packages/respjson"
 	"reflect"
 	"testing"
 )

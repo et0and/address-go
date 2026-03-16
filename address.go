@@ -3,8 +3,8 @@
 package address
 
 import (
-	"github.com/stainless-sdks/address-go/internal/apijson"
-	"github.com/stainless-sdks/address-go/packages/respjson"
+	"github.com/et0and/address-go/internal/apijson"
+	"github.com/et0and/address-go/packages/respjson"
 )
 
 type GetAPIInfoResponse struct {

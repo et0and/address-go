@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"slices"
 
-	"github.com/stainless-sdks/address-go/internal/apijson"
-	"github.com/stainless-sdks/address-go/internal/requestconfig"
-	"github.com/stainless-sdks/address-go/option"
-	"github.com/stainless-sdks/address-go/packages/respjson"
+	"github.com/et0and/address-go/internal/apijson"
+	"github.com/et0and/address-go/internal/requestconfig"
+	"github.com/et0and/address-go/option"
+	"github.com/et0and/address-go/packages/respjson"
 )
 
 // Health, API information, and API key onboarding endpoints that do not require

@@ -14,7 +14,7 @@ import (
 	"encoding"
 	"encoding/base64"
 	"fmt"
-	"github.com/stainless-sdks/address-go/internal/encoding/json/shims"
+	"github.com/et0and/address-go/internal/encoding/json/shims"
 	"reflect"
 	"strconv"
 	"strings"

@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/address-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/address-go/packages/param"
+	"github.com/et0and/address-go/internal/encoding/json/sentinel"
+	"github.com/et0and/address-go/packages/param"
 	"reflect"
 	"slices"
 	"testing"

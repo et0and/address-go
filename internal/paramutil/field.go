@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/address-go/packages/param"
-	"github.com/stainless-sdks/address-go/packages/respjson"
+	"github.com/et0and/address-go/packages/param"
+	"github.com/et0and/address-go/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {
