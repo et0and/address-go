@@ -2,7 +2,7 @@ package apijson
 
 import (
 	"errors"
-	"github.com/stainless-sdks/address-go/packages/param"
+	"github.com/et0and/address-go/packages/param"
 	"reflect"
 
 	"github.com/tidwall/gjson"

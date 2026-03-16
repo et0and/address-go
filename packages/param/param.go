@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/address-go/internal/encoding/json/sentinel"
+	"github.com/et0and/address-go/internal/encoding/json/sentinel"
 	"reflect"
 )
 

@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/address-go
+module github.com/et0and/address-go
 
 go 1.22
 

@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/address-go"
-	"github.com/stainless-sdks/address-go/internal"
-	"github.com/stainless-sdks/address-go/option"
+	"github.com/et0and/address-go"
+	"github.com/et0and/address-go/internal"
+	"github.com/et0and/address-go/option"
 )
 
 type closureTransport struct {

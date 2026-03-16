@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/address-go/internal"
-	"github.com/stainless-sdks/address-go/internal/apierror"
-	"github.com/stainless-sdks/address-go/internal/apiform"
-	"github.com/stainless-sdks/address-go/internal/apiquery"
+	"github.com/et0and/address-go/internal"
+	"github.com/et0and/address-go/internal/apierror"
+	"github.com/et0and/address-go/internal/apiform"
+	"github.com/et0and/address-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {
