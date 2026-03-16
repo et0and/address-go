@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/address-go=/path/to/address-go
+$ go mod edit -replace github.com/et0and/address-go=/path/to/address-go
 ```
 
 ## Running tests

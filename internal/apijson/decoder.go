@@ -7,7 +7,7 @@ package apijson
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/address-go/packages/param"
+	"github.com/et0and/address-go/packages/param"
 	"reflect"
 	"strconv"
 	"sync"

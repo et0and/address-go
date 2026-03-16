@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/address-go"
-	"github.com/stainless-sdks/address-go/internal/testutil"
-	"github.com/stainless-sdks/address-go/option"
+	"github.com/et0and/address-go"
+	"github.com/et0and/address-go/internal/testutil"
+	"github.com/et0and/address-go/option"
 )
 
 func TestAddressGet(t *testing.T) {

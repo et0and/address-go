@@ -10,12 +10,12 @@ import (
 	"net/url"
 	"slices"
 
-	"github.com/stainless-sdks/address-go/internal/apijson"
-	"github.com/stainless-sdks/address-go/internal/apiquery"
-	"github.com/stainless-sdks/address-go/internal/requestconfig"
-	"github.com/stainless-sdks/address-go/option"
-	"github.com/stainless-sdks/address-go/packages/param"
-	"github.com/stainless-sdks/address-go/packages/respjson"
+	"github.com/et0and/address-go/internal/apijson"
+	"github.com/et0and/address-go/internal/apiquery"
+	"github.com/et0and/address-go/internal/requestconfig"
+	"github.com/et0and/address-go/option"
+	"github.com/et0and/address-go/packages/param"
+	"github.com/et0and/address-go/packages/respjson"
 )
 
 // Look up and list NZ addresses with filtering, pagination, and address ID lookup.
