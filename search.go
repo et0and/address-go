@@ -71,12 +71,12 @@ type SearchQueryResponse struct {
 	FullAddressNumber    string  `json:"fullAddressNumber" api:"required"`
 	Latitude             float64 `json:"latitude" api:"required"`
 	Longitude            float64 `json:"longitude" api:"required"`
-	Postcode             string  `json:"postcode" api:"required"`
-	Region               string  `json:"region" api:"required"`
 	Suburb               string  `json:"suburb" api:"required"`
 	TerritorialAuthority string  `json:"territorialAuthority" api:"required"`
 	TownCity             string  `json:"townCity" api:"required"`
 	FullAddressRoad      string  `json:"fullAddressRoad" api:"nullable"`
+	Postcode             string  `json:"postcode" api:"nullable"`
+	Region               string  `json:"region" api:"nullable"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		AddressID            respjson.Field
@@ -84,12 +84,12 @@ type SearchQueryResponse struct {
 		FullAddressNumber    respjson.Field
 		Latitude             respjson.Field
 		Longitude            respjson.Field
-		Postcode             respjson.Field
-		Region               respjson.Field
 		Suburb               respjson.Field
 		TerritorialAuthority respjson.Field
 		TownCity             respjson.Field
 		FullAddressRoad      respjson.Field
+		Postcode             respjson.Field
+		Region               respjson.Field
 		ExtraFields          map[string]respjson.Field
 		raw                  string
 	} `json:"-"`
