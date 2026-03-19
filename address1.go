@@ -89,7 +89,6 @@ type AddressGetResponse struct {
 	AddressID            float64 `json:"addressId" api:"required"`
 	FullAddress          string  `json:"fullAddress" api:"required"`
 	FullAddressNumber    string  `json:"fullAddressNumber" api:"required"`
-	FullAddressRoad      string  `json:"fullAddressRoad" api:"required"`
 	Latitude             float64 `json:"latitude" api:"required"`
 	Longitude            float64 `json:"longitude" api:"required"`
 	Postcode             string  `json:"postcode" api:"required"`
@@ -97,12 +96,12 @@ type AddressGetResponse struct {
 	Suburb               string  `json:"suburb" api:"required"`
 	TerritorialAuthority string  `json:"territorialAuthority" api:"required"`
 	TownCity             string  `json:"townCity" api:"required"`
+	FullAddressRoad      string  `json:"fullAddressRoad" api:"nullable"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		AddressID            respjson.Field
 		FullAddress          respjson.Field
 		FullAddressNumber    respjson.Field
-		FullAddressRoad      respjson.Field
 		Latitude             respjson.Field
 		Longitude            respjson.Field
 		Postcode             respjson.Field
@@ -110,6 +109,7 @@ type AddressGetResponse struct {
 		Suburb               respjson.Field
 		TerritorialAuthority respjson.Field
 		TownCity             respjson.Field
+		FullAddressRoad      respjson.Field
 		ExtraFields          map[string]respjson.Field
 		raw                  string
 	} `json:"-"`
@@ -125,7 +125,6 @@ type AddressListResponse struct {
 	AddressID            float64 `json:"addressId" api:"required"`
 	FullAddress          string  `json:"fullAddress" api:"required"`
 	FullAddressNumber    string  `json:"fullAddressNumber" api:"required"`
-	FullAddressRoad      string  `json:"fullAddressRoad" api:"required"`
 	Latitude             float64 `json:"latitude" api:"required"`
 	Longitude            float64 `json:"longitude" api:"required"`
 	Postcode             string  `json:"postcode" api:"required"`
@@ -133,12 +132,12 @@ type AddressListResponse struct {
 	Suburb               string  `json:"suburb" api:"required"`
 	TerritorialAuthority string  `json:"territorialAuthority" api:"required"`
 	TownCity             string  `json:"townCity" api:"required"`
+	FullAddressRoad      string  `json:"fullAddressRoad" api:"nullable"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		AddressID            respjson.Field
 		FullAddress          respjson.Field
 		FullAddressNumber    respjson.Field
-		FullAddressRoad      respjson.Field
 		Latitude             respjson.Field
 		Longitude            respjson.Field
 		Postcode             respjson.Field
@@ -146,6 +145,7 @@ type AddressListResponse struct {
 		Suburb               respjson.Field
 		TerritorialAuthority respjson.Field
 		TownCity             respjson.Field
+		FullAddressRoad      respjson.Field
 		ExtraFields          map[string]respjson.Field
 		raw                  string
 	} `json:"-"`
