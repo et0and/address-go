@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"slices"
+	"strings"
 
 	"github.com/et0and/address-go/internal/requestconfig"
 	"github.com/et0and/address-go/option"
@@ -17,14 +18,11 @@ import (
 // directly, and instead use the [NewClient] method instead.
 type Client struct {
 	options []option.RequestOption
-	// Health, API information, and API key onboarding endpoints that do not require
-	// authentication.
+	// Health and API key onboarding endpoints that do not require authentication.
 	Health HealthService
-	// Health, API information, and API key onboarding endpoints that do not require
-	// authentication.
+	// Health and API key onboarding endpoints that do not require authentication.
 	Challenge ChallengeService
-	// Health, API information, and API key onboarding endpoints that do not require
-	// authentication.
+	// Health and API key onboarding endpoints that do not require authentication.
 	RequestKey RequestKeyService
 	// Look up and list NZ addresses with filtering, pagination, and address ID lookup.
 	Addresses AddressService
@@ -41,12 +39,20 @@ type Client struct {
 // DefaultClientOptions read from the environment (ADDRESS_API_KEY,
 // ADDRESS_BASE_URL). This should be used to initialize new clients.
 func DefaultClientOptions() []option.RequestOption {
-	defaults := []option.RequestOption{option.WithEnvironmentProduction()}
+	defaults := []option.RequestOption{option.WithHTTPClient(defaultHTTPClient()), option.WithEnvironmentProduction()}
 	if o, ok := os.LookupEnv("ADDRESS_BASE_URL"); ok {
 		defaults = append(defaults, option.WithBaseURL(o))
 	}
 	if o, ok := os.LookupEnv("ADDRESS_API_KEY"); ok {
 		defaults = append(defaults, option.WithAPIKey(o))
+	}
+	if o, ok := os.LookupEnv("ADDRESS_CUSTOM_HEADERS"); ok {
+		for _, line := range strings.Split(o, "\n") {
+			colon := strings.Index(line, ":")
+			if colon >= 0 {
+				defaults = append(defaults, option.WithHeader(strings.TrimSpace(line[:colon]), strings.TrimSpace(line[colon+1:])))
+			}
+		}
 	}
 	return defaults
 }
@@ -138,14 +144,4 @@ func (r *Client) Patch(ctx context.Context, path string, params any, res any, op
 // response.
 func (r *Client) Delete(ctx context.Context, path string, params any, res any, opts ...option.RequestOption) error {
 	return r.Execute(ctx, http.MethodDelete, path, params, res, opts...)
-}
-
-// Returns basic API information including available endpoints and version details.
-// This is the entry point for discovering the API capabilities.
-func (r *Client) GetAPIInfo(ctx context.Context, opts ...option.RequestOption) (res *GetAPIInfoResponse, err error) {
-	var preClientOpts = []option.RequestOption{requestconfig.WithSecurity(requestconfig.Security{})}
-	opts = slices.Concat(preClientOpts, r.options, opts)
-	path := ""
-	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, nil, &res, opts...)
-	return res, err
 }

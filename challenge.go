@@ -13,8 +13,7 @@ import (
 	"github.com/et0and/address-go/packages/respjson"
 )
 
-// Health, API information, and API key onboarding endpoints that do not require
-// authentication.
+// Health and API key onboarding endpoints that do not require authentication.
 //
 // ChallengeService contains methods and other services that help with interacting
 // with the address API.
